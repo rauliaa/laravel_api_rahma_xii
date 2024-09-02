@@ -4,14 +4,12 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Interfaces\{
-    FilmRepositoryInterface,
-};
-use App\Repositories\{
-    FilmRepository,
-};
+use App\Interfaces\FilmRepositoryInterFace;
+use App\Repositories\FilmRepository;
 
-class RepositoryServiceProvider extends ServiceProvider
+
+
+class FilmServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -19,7 +17,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
-        $this->app->bind(FilmRepositoryInterface::class, FilmRepository::class);
+        $this->app->bind(FilmRepositoryInterFace::class, FilmRepository::class);
     }
 
     /**
